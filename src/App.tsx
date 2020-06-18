@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Header } from './components/Headers'
+import { Resume } from './modules/Resume/containers/Resume'
+import { TMode } from './modules/type'
+import { AppLayout } from './style/styled'
 
 function App() {
+  const [mode, setMode] = React.useState<TMode>('edit')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AppLayout className="App">
+      <Header mode={mode} setMode={setMode} />
+      <Resume mode={mode} />
+    </AppLayout>
+  )
 }
 
-export default App;
+export default App
