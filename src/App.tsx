@@ -7,10 +7,12 @@ import { AppLayout } from './style/styled'
 function App() {
   const [mode, setMode] = React.useState<TMode>('edit')
   return (
-    <AppLayout className="App">
+    // <AppLayout className="App">
+    <>
       <Header mode={mode} setMode={setMode} />
-      <Resume mode={mode} />
-    </AppLayout>
+      <Resume />
+    </>
+    // </AppLayout>
   )
 }
 
